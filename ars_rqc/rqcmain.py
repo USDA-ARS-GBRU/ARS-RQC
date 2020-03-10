@@ -229,6 +229,7 @@ class Fastq():
             bbtoolsdict = self.parse_params()
             parameters = ['clumpify.sh',
                           'in=' + self.abspath,
+                          'groups=' + '16', 
                           'out=' + os.path.join(outdir, 'clumped.fq.gz')]
             parameters.extend(bbtoolsdict['clumpify'])
             p6 = subprocess.run(parameters,
